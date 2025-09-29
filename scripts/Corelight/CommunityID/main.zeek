@@ -4,11 +4,14 @@
 module CommunityID;
 
 export {
-    # An unsigned 16-bit number to seed our hashing
+    ## The Community ID hashing operation includes a seed value that can be
+    ## used to reliably distinguish the resulting ID values of different sites.
+    ## The default seed is zero.
     option seed: count = 0;
 
-    # Whether to add a base64 pass over the hash digest.
-    # Enabled by default, since it shortens the output.
+    ## By default, the Community ID includes a base64 encoding pass that
+    ## shortens the output. For troubleshooting or performance tweaks it can
+    ## prove handy to disable this pass.
     option do_base64: bool = T;
 
     # Verbose debugging log output to the console.
